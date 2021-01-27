@@ -42,8 +42,7 @@ android {
     	}
 }
 dependencies {
-	//org.jitsi.react:jitsi-meet-sdk:2.+ org.jitsi.react:jitsi-meet-sdk:1.9.0@aar
-	compile  ('org.jitsi.react:jitsi-meet-sdk:2.+') {
+	compile  ('org.jitsi.react:jitsi-meet-sdk:3.+') {
 		transitive = true;
 	}
 
