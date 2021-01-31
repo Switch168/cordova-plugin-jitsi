@@ -8,7 +8,7 @@ import com.cordova.plugin.jitsi.JitsiPlugin;//.JITSI_PLUGIN_TAG
 import org.jitsi.meet.sdk.JitsiMeetActivity;
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
 
-import java.util.Map;
+import java.util.HashMap;
 
 public class JitsiMeetPluginActivity extends JitsiMeetActivity {
     
@@ -33,19 +33,19 @@ public class JitsiMeetPluginActivity extends JitsiMeetActivity {
     }
 
     @Override
-    public void onConferenceJoined(Map<String, Object> data) {
+    public void onConferenceJoined(HashMap<String, Object> data) {
         JitsiPluginModel.getInstance().changeState("onConferenceJoined");
         super.onConferenceJoined(data);
     }
 
     @Override
-    public void onConferenceTerminated(Map<String, Object> data) {
+    public void onConferenceTerminated(HashMap<String, Object> data) {
         JitsiPluginModel.getInstance().changeState("onConferenceTerminated");
         super.onConferenceTerminated(data);
     }
 
     @Override
-    public void onConferenceWillJoin(Map<String, Object> data) {
+    public void onConferenceWillJoin(HashMap<String, Object> data) {
         JitsiPluginModel.getInstance().changeState("onConferenceWillJoin");
         super.onConferenceWillJoin(data);
     }
