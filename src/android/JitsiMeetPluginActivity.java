@@ -49,4 +49,13 @@ public class JitsiMeetPluginActivity extends JitsiMeetActivity {
         JitsiPluginModel.getInstance().changeState("onConferenceWillJoin");
         super.onConferenceWillJoin(data);
     }
+    
+    @Override
+    public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode) {
+        super.onPictureInPictureModeChanged(isInPictureInPictureMode);
+        if (!isInPictureInPictureMode) {
+            this.startActivity(new Intent(this, getClass())
+                    .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
+        }
+    }
 }
