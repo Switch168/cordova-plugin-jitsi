@@ -42,6 +42,8 @@ class JitsiPlugin : CDVPlugin, JitsiMeetViewDelegate {
 
     @objc(destroy:) func destroy(_ command: CDVInvokedUrlCommand) {
         if((jitsiMeetView) != nil) {
+            jitsiMeetView.leave()
+            jitsiMeetView.hangUp()
             jitsiMeetView.removeFromSuperview()
             jitsiMeetView = nil
         }
